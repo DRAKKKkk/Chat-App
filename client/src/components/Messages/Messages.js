@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import ScrollToBottom from 'react-scroll-to-bottom';
 
@@ -11,5 +12,7 @@ const Messages = ({ messages, name }) => (
     {messages.map((message, i) => <div key={i}><Message message={message} name={name}/></div>)}
   </ScrollToBottom>
 );
-
+Messages.propTypes = {
+  room: PropTypes.string.isRequired,
+};
 export default Messages;

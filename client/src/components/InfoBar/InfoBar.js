@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import onlineIcon from '../../icons/onlineIcon.png';
 import closeIcon from '../../icons/closeIcon.png';
@@ -16,5 +17,9 @@ const InfoBar = ({ room }) => (
     </div>
   </div>
 );
+
+InfoBar.propTypes = {
+  room: PropTypes.string.isRequired,
+};
 
 export default InfoBar;
