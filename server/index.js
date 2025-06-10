@@ -9,12 +9,14 @@ const router = require('./router');
 
 const app = express();
 const server = http.createServer(app);
-const io = socketio(server, {
+const io = require('socket.io')(server, {
   cors: {
-    origin: '*',
+    origin: 'https://chat-app-66u5.onrender.com',
     methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
-  }
+  },
+  transports: ['polling']
 });
 
 app.use(cors({
@@ -22,6 +24,11 @@ app.use(cors({
   methods: ['GET', 'POST'],
   credentials: true
 }));
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
 app.use(router);
 
 io.on('connect', (socket) => {
