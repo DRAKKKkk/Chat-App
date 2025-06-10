@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "babel-jest": "^30.0.0-beta.3",
+    "dotenv": "^16.5.0",
     "query-string": "^9.2.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
