@@ -11,7 +11,7 @@ const app = express();
 const server = http.createServer(app);
 const io = require('socket.io')(server, {
   cors: {
-    origin: 'https://chat-app-avoe.vercel.app',
+    origin: 'https://chat-app-epbk.vercel.app/',
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
@@ -19,7 +19,7 @@ const io = require('socket.io')(server, {
 });
 
 app.use(cors({
-  origin: 'https://chat-app-avoe.vercel.app',
+  origin: 'https://chat-app-epbk.vercel.app/',
   methods: ['GET', 'POST'],
   credentials: true
 }));
