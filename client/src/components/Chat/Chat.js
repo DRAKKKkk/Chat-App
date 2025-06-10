@@ -10,7 +10,7 @@ import Input from '../Input/Input';
 
 import './Chat.css';
 
-const ENDPOINT = process.env.REACT_APP_ENDPOINT;
+const ENDPOINT = 'https://chat-app-66u5.onrender.com';
 let socket;
 
 const Chat = () => {
