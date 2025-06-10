@@ -11,7 +11,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server, {
   cors: {
-    origin: 'https://chat-app-avoe.vercel.app',
+    origin: '*',
     methods: ['GET', 'POST'],
     credentials: true
   }
