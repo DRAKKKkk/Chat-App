@@ -11,7 +11,7 @@ const app = express();
 const server = http.createServer(app);
 const io = require('socket.io')(server, {
   cors: {
-    origin: 'https://chat-app-epbk.vercel.app/',
+    origin: 'https://chat-app-epbk.vercel.app',
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
@@ -19,12 +19,12 @@ const io = require('socket.io')(server, {
 });
 
 app.use(cors({
-  origin: 'https://chat-app-epbk.vercel.app/',
+  origin: 'https://chat-app-epbk.vercel.app',
   methods: ['GET', 'POST'],
   credentials: true
 }));
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://chat-app-epbk.vercel.app/');
+  res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
